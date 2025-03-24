@@ -6,9 +6,10 @@ const VideoCatalog = () => {
 
   const fetchIndexedVideos = async () => {
     try {
-      const response = await fetch("https://localhost:7188/api/indexed-videos");
+      const response = await fetch("http://192.168.0.103:5179/api/indexed-videos");
       if (!response.ok) {
         console.error("Error while fetching indexed videos");
+        console.log(response)
         return;
       }
       const videos = await response.json();
